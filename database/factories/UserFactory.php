@@ -25,12 +25,38 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            // Identity
+            'name'              => fake()->name(),
+            'email'             => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => static::$password ??= Hash::make('password'),
-            'remember_token' => Str::random(10),
-            'role' => fake()->randomElement(['user', 'admin', 'superAdmin']),
+            'password'          => static::$password ??= Hash::make('password'),
+            'remember_token'    => Str::random(10),
+            'role'              => fake()->randomElement(['user', 'admin']),
+
+            // Profile
+            'phone'             => fake()->optional(0.7)->phoneNumber(),
+            'job_title'         => fake()->optional(0.8)->jobTitle(),
+            'organization'      => fake()->optional(0.8)->company(),
+            'timezone'          => fake()->randomElement(['UTC', 'America/New_York', 'Europe/London', 'Asia/Karachi', 'Asia/Dubai']),
+            'locale'            => fake()->randomElement(['en', 'fr', 'de', 'es']),
+            'avatar_url'        => null,
+
+            // 2FA (disabled by default)
+            'two_factor_secret'         => null,
+            'two_factor_recovery_codes' => null,
+            'two_factor_confirmed_at'   => null,
+
+            // Security & Audit
+            'last_login_ip'          => fake()->optional(0.6)->ipv4(),
+            'last_login_at'          => fake()->optional(0.6)->dateTimeBetween('-30 days', 'now'),
+            'failed_login_attempts'  => 0,
+            'locked_until'           => null,
+
+            // Preferences
+            'preferences' => [
+                'theme'         => fake()->randomElement(['dark', 'light']),
+                'notifications' => fake()->boolean(),
+            ],
         ];
     }
 
@@ -41,6 +67,16 @@ class UserFactory extends Factory
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
+        ]);
+    }
+
+    /**
+     * Indicate the user is a Super Admin.
+     */
+    public function superAdmin(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'role' => 'superAdmin',
         ]);
     }
 }
