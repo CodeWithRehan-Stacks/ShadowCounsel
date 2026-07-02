@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\TotalUsers;
 use Illuminate\Http\Request;
 use Laravel\Nova\Auth\PasswordValidationRules;
 use Laravel\Nova\Fields\Gravatar;
@@ -71,7 +72,9 @@ class User extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new TotalUsers,
+        ];
     }
 
     /**

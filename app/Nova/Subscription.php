@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use App\Models\Subscription as SubscriptionModel;
+use App\Nova\Metrics\TotalSubscriptions;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
@@ -71,7 +72,9 @@ class Subscription extends Resource
      */
     public function cards(NovaRequest $request): array
     {
-        return [];
+        return [
+            new TotalSubscriptions,
+        ];
     }
 
     /**
