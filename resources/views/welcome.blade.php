@@ -7,6 +7,9 @@
     <title>ShadowCounsel - Coming Soon</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         body {
             background-color: #0b0f19;
@@ -14,6 +17,17 @@
 
         .glow-text {
             text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+
+            font-family: "Elms Sans", sans-serif;
+                
+               
+        }
+
+        @font-face {
+            font-family: "Elms Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
         }
     </style>
 </head>
@@ -25,9 +39,7 @@
 
     <!-- Top Navigation / Logo -->
     <div class="w-full max-w-6xl flex justify-between items-center py-4">
-        <div class="text-xl font-bold tracking-wider text-white">
-            SHADOW<span class="text-blue-500">COUNSEL</span>
-        </div>
+        <img src="{{ asset('svg/Logo.svg') }}" alt="ShadowCounsel" class="h-10 w-auto">
         <div class="text-xs tracking-widest text-gray-500 uppercase hidden sm:block">
             AI Finance & Legal Orchestrator
         </div>
@@ -40,15 +52,16 @@
             Under Development
         </div>
 
-        <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight glow-text">
+        <h1 class="text-2xl md:text-5xl font-extrabold text-white tracking-tight leading-tight glow-text">
             The Future of Financial <br>
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400">
                 Legal Intelligence
             </span>
         </h1>
 
-        <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
-            An automated multi-agent architecture powered by Nemotron 3 Ultra. Designed to analyze corporate finance compliance, SEC regulations, and complex tax laws—launching soon.
+        <p class="text-gray-400 text-sm md:text-base max-w-xl mx-auto leading-relaxed" style="font-family: 'Elms Sans', sans-serif;">
+            An automated multi-agent architecture powered by Nemotron 3 Ultra. Designed to analyze corporate finance compliance, SEC regulations, and
+            complex tax laws—launching soon.
         </p>
 
         <!-- Notify Form -->
@@ -102,7 +115,7 @@
                 setTimeout(() => {
                     modal.classList.remove('translate-y-10', 'opacity-0', 'pointer-events-none');
                 }, 100);
-                
+
                 // Auto-hide popup after 5 seconds
                 setTimeout(() => {
                     closeModal();
@@ -120,4 +133,5 @@
     @endif
 
 </body>
+
 </html>
