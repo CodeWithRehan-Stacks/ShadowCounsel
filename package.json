@@ -4,7 +4,9 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "dev": "vite"
+        "dev": "vite",
+        "build-log-viewer": "cd nova-components/LogViewer && npm run dev",
+        "build-log-viewer-prod": "cd nova-components/LogViewer && npm run prod"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",

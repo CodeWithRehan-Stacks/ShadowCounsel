@@ -2,53 +2,67 @@
 
 namespace App\Nova;
 
-use App\Models\Subscription as SubscriptionModel;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Code;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Subscription extends Resource
+class ApplicationLog extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
-     * @var class-string<\App\Models\Subscription>
+     * @var class-string<\App\Models\ApplicationLog>
      */
-    public static $model = SubscriptionModel::class;
+    public static $model = \App\Models\ApplicationLog::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'email';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
      *
-     * @var array<int, string>
+     * @var array
      */
     public static $search = [
-        'id',
-        'email',
+        'id', 'level_name', 'message',
     ];
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @return array<int, \Laravel\Nova\Fields\Field|\Laravel\Nova\Panel|\Laravel\Nova\ResourceTool|\Illuminate\Http\Resources\MergeValue>
+     * @return array<int, \Laravel\Nova\Fields\Field>
      */
     public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),
-
-            Text::make('Email')
+            
+            Text::make('Level', 'level_name')
+                ->sortable(),
+                
+            Text::make('Message', 'message')
                 ->sortable()
-                ->rules('required', 'email', 'max:255'),
-
+                ->displayUsing(function ($value) {
+                    return strlen($value) > 100 ? substr($value, 0, 100) . '...' : $value;
+                })
+                ->onlyOnIndex(),
+                
+            Text::make('Message', 'message')
+                ->hideFromIndex(),
+                
+            Code::make('Context', 'context')
+                ->json(),
+                
+            Code::make('Extra', 'extra')
+                ->json(),
+                
             Text::make('Time', 'created_at')
                 ->displayUsing(fn ($date) => $date ? $date->format('H:i:s') : '')
                 ->sortable()
@@ -59,13 +73,29 @@ class Subscription extends Resource
                 ->sortable()
                 ->onlyOnIndex(),
                 
-            DateTime::make('Created At')
+            DateTime::make('Created At', 'created_at')
                 ->hideFromIndex(),
         ];
     }
 
     /**
-     * Get the cards available for the request.
+     * Determine if this resource is authorized to create.
+     */
+    public static function authorizedToCreate(Request $request): bool
+    {
+        return false;
+    }
+
+    /**
+     * Determine if this resource is authorized to update.
+     */
+    public function authorizedToUpdate(Request $request): bool
+    {
+        return false;
+    }
+
+    /**
+     * Get the cards available for the resource.
      *
      * @return array<int, \Laravel\Nova\Card>
      */
