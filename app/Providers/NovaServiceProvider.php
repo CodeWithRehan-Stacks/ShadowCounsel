@@ -18,7 +18,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
 
         Nova::footer(function () {
-            return '<div>made by Rehan</div>';
+            $year = date('Y');
+            return '<div class="text-center text-xs text-gray-500 tracking-wide font-medium">' .
+                '&copy; ' . $year . ' ShadowCounsel. Built with ❤️ by <span class="text-blue-500 font-semibold">Rehan</span>.' .
+                '</div>';
         });
     }
 

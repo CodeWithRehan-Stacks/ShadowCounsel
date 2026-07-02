@@ -18,6 +18,6 @@ class SubscriptionController extends Controller
 
         Subscription::create($validated);
 
-        return Redirect::back()->with('success', 'Shukriya! Aapki email save kar li gayi hai.');
+        return Redirect::back()->with('success', 'Thank you for subscribing! You will receive updates from us.');
     }
 }
