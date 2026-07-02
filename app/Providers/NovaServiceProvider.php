@@ -17,7 +17,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         parent::boot();
 
-        //
+        Nova::footer(function () {
+            return '<div>made by Rehan</div>';
+        });
     }
 
     /**
