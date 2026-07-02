@@ -178,11 +178,8 @@ class User extends Resource
      *
      * @return array<int, \Laravel\Nova\Card>
      */
-    public function cards(NovaRequest $request): array
+    public function cards(NovaRequest $request)
     {
-        return [
-            new TotalUsers,
-        ];
     }
 
     /**
