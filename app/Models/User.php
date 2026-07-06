@@ -25,11 +25,16 @@ class User extends Authenticatable
         'password',
         'role',
         'phone',
+        'phone_number',
         'job_title',
         'organization',
         'timezone',
         'locale',
+        'language',
+        'country',
+        'bio',
         'avatar_url',
+        'profile_photo_path',
         'two_factor_secret',
         'two_factor_recovery_codes',
         'two_factor_confirmed_at',
@@ -84,5 +89,15 @@ class User extends Authenticatable
     public function hasTwoFactorEnabled(): bool
     {
         return $this->two_factor_confirmed_at !== null;
+    }
+
+    public function chats(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Chat::class);
+    }
+
+    public function setting(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne(Setting::class);
     }
 }
