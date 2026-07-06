@@ -7,42 +7,49 @@
 <div class="overflow-y-auto h-full bg-gray-50 dark:bg-gray-950">
 
     <!-- Hero Banner -->
-    <div class="h-28 bg-gradient-to-r from-slate-700 via-gray-800 to-gray-900 relative overflow-hidden flex items-end px-6 pb-4">
-        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'40\' height=\'40\' viewBox=\'0 0 40 40\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.6\' fill-rule=\'evenodd\'%3E%3Cpath d=\'M0 40L40 0H20L0 20M40 40V20L20 40\'/%3E%3C/g%3E%3C/svg%3E');"></div>
-        <div class="relative">
-            <h1 class="text-xl font-bold text-white flex items-center gap-2">
-                <i class="bi bi-gear-wide-connected text-gray-300"></i> Settings
+    <div class="relative h-32 overflow-hidden bg-[#0f1117]">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700/50 via-[#0f1117] to-[#0f1117]"></div>
+        <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl"></div>
+        <div class="relative h-full flex flex-col justify-end px-6 pb-5 max-w-5xl mx-auto">
+            <h1 class="text-xl font-bold text-white flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                Settings
             </h1>
-            <p class="text-xs text-gray-400 mt-0.5">Manage your account preferences and security</p>
+            <p class="text-xs text-gray-400 mt-1">Manage your account preferences and security</p>
         </div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-4 py-6">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
 
             <!-- LEFT: Settings Navigation -->
             <nav class="lg:col-span-1">
-                <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden sticky top-4">
-                    <div class="px-4 py-3 border-b border-gray-100 dark:border-gray-700">
+                <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-gray-200 dark:border-gray-800/60 shadow-sm overflow-hidden sticky top-4">
+                    <div class="px-4 py-3 border-b border-gray-100 dark:border-gray-800/60">
                         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Navigation</p>
                     </div>
                     <div class="p-2 space-y-0.5">
-                        <a href="#appearance" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-900/20 hover:text-violet-700 dark:hover:text-violet-300 transition group">
-                            <i class="bi bi-palette2 text-base group-hover:text-violet-500"></i> Appearance
+                        <a href="#appearance" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
+                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                            Appearance
                         </a>
-                        <a href="#security" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-900/20 hover:text-violet-700 dark:hover:text-violet-300 transition group">
-                            <i class="bi bi-shield-lock text-base group-hover:text-violet-500"></i> Security
+                        <a href="#security" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
+                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            Security
                         </a>
-                        <a href="#notifications" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-900/20 hover:text-violet-700 dark:hover:text-violet-300 transition group">
-                            <i class="bi bi-bell text-base group-hover:text-violet-500"></i> Notifications
+                        <a href="#notifications" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
+                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                            Notifications
                         </a>
-                        <a href="#danger" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm rounded-xl text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition group">
-                            <i class="bi bi-exclamation-triangle text-base"></i> Danger Zone
+                        <a href="#danger" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-red-500/80 dark:text-red-400/70 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400 transition-colors group">
+                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                            Danger Zone
                         </a>
                     </div>
-                    <div class="p-3 border-t border-gray-100 dark:border-gray-700">
-                        <a href="{{ route('profile.index') }}" class="flex items-center gap-2 text-xs text-violet-600 dark:text-violet-400 hover:underline">
-                            <i class="bi bi-person-circle"></i> Edit Profile
+                    <div class="p-3 border-t border-gray-100 dark:border-gray-800/60">
+                        <a href="{{ route('profile.index') }}" class="flex items-center gap-2 text-xs text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 font-medium transition-colors">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                            Edit Profile
                         </a>
                     </div>
                 </div>
@@ -53,10 +60,10 @@
 
                 <!-- ── APPEARANCE ── -->
                 <section id="appearance">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
-                        <div class="flex items-center gap-2 px-5 py-3.5 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80">
-                            <div class="w-7 h-7 rounded-lg bg-violet-100 dark:bg-violet-900/30 flex items-center justify-center">
-                                <i class="bi bi-palette2 text-violet-600 text-sm"></i>
+                    <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-gray-200 dark:border-gray-800/60 shadow-sm overflow-hidden">
+                        <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60">
+                            <div class="w-8 h-8 rounded-lg bg-violet-100 dark:bg-violet-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Appearance & Language</h3>
@@ -64,55 +71,55 @@
                             </div>
                         </div>
 
-                        <form action="{{ route('settings.update') }}" method="POST" class="divide-y divide-gray-100 dark:divide-gray-700">
+                        <form action="{{ route('settings.update') }}" method="POST" class="divide-y divide-gray-100 dark:divide-gray-800/60">
                             @csrf @method('PUT')
 
                             <!-- Dark Mode -->
                             <div class="flex items-center justify-between px-5 py-4">
                                 <div class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mt-0.5">
-                                        <i class="bi bi-moon-stars text-gray-500 dark:text-gray-400"></i>
+                                    <div class="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mt-0.5 flex-shrink-0">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                                     </div>
                                     <div>
-                                        <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Dark Mode</p>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Dark Mode</p>
                                         <p class="text-xs text-gray-400 mt-0.5">Reduce eye strain with a darker interface</p>
                                     </div>
                                 </div>
                                 <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
-                                    <input type="checkbox" name="dark_mode" value="1" {{ $setting->dark_mode ? 'checked' : '' }} class="sr-only peer">
-                                    <div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600"></div>
+                                    <input type="checkbox" name="dark_mode" id="darkModeToggle" value="1" {{ $setting->dark_mode ? 'checked' : '' }} class="sr-only peer">
+                                    <div class="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600"></div>
                                 </label>
                             </div>
 
                             <!-- Notifications -->
                             <div class="flex items-center justify-between px-5 py-4" id="notifications">
                                 <div class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mt-0.5">
-                                        <i class="bi bi-bell text-gray-500 dark:text-gray-400"></i>
+                                    <div class="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mt-0.5 flex-shrink-0">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                                     </div>
                                     <div>
-                                        <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Push Notifications</p>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Push Notifications</p>
                                         <p class="text-xs text-gray-400 mt-0.5">Receive alerts and in-app notifications</p>
                                     </div>
                                 </div>
                                 <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
                                     <input type="checkbox" name="notifications" value="1" {{ $setting->notifications ? 'checked' : '' }} class="sr-only peer">
-                                    <div class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600"></div>
+                                    <div class="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600"></div>
                                 </label>
                             </div>
 
                             <!-- Language -->
                             <div class="flex items-center justify-between px-5 py-4">
                                 <div class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-lg bg-gray-100 dark:bg-gray-700 flex items-center justify-center mt-0.5">
-                                        <i class="bi bi-translate text-gray-500 dark:text-gray-400"></i>
+                                    <div class="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mt-0.5 flex-shrink-0">
+                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
                                     </div>
                                     <div>
-                                        <p class="text-sm font-medium text-gray-800 dark:text-gray-200">Language</p>
+                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Language</p>
                                         <p class="text-xs text-gray-400 mt-0.5">Choose your preferred interface language</p>
                                     </div>
                                 </div>
-                                <select name="language" class="text-sm px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-violet-500 transition">
+                                <select name="language" class="text-sm px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all">
                                     <option value="en" {{ $setting->language === 'en' ? 'selected' : '' }}>🇺🇸 English</option>
                                     <option value="ar" {{ $setting->language === 'ar' ? 'selected' : '' }}>🇸🇦 Arabic</option>
                                     <option value="fr" {{ $setting->language === 'fr' ? 'selected' : '' }}>🇫🇷 French</option>
@@ -122,10 +129,11 @@
                                 </select>
                             </div>
 
-                            <div class="px-5 py-4 bg-gray-50 dark:bg-gray-800/50 flex justify-end">
+                            <div class="px-5 py-4 flex justify-end">
                                 <button type="submit"
-                                        class="inline-flex items-center gap-2 px-5 py-2 bg-violet-600 hover:bg-violet-700 text-white text-sm font-semibold rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
-                                    <i class="bi bi-check2"></i> Save Preferences
+                                        class="inline-flex items-center gap-2 px-5 py-2.5 bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold rounded-xl shadow-sm shadow-violet-500/20 hover:shadow-md transition-all duration-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    Save Preferences
                                 </button>
                             </div>
                         </form>
@@ -134,10 +142,10 @@
 
                 <!-- ── SECURITY / PASSWORD ── -->
                 <section id="security">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm overflow-hidden">
-                        <div class="flex items-center gap-2 px-5 py-3.5 border-b border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/80">
-                            <div class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
-                                <i class="bi bi-shield-lock text-blue-600 text-sm"></i>
+                    <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-gray-200 dark:border-gray-800/60 shadow-sm overflow-hidden">
+                        <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60">
+                            <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Security</h3>
@@ -150,48 +158,31 @@
 
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
-                                        Current Password
-                                    </label>
-                                    <div class="relative">
-                                        <i class="bi bi-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                                        <input type="password" name="current_password" required
-                                               class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition @error('current_password') border-red-400 @enderror"
-                                               placeholder="••••••••">
-                                    </div>
-                                    @error('current_password') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Current Password</label>
+                                    <input type="password" name="current_password" required placeholder="••••••••"
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all @error('current_password') border-red-400 @enderror">
+                                    @error('current_password') <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p> @enderror
                                 </div>
 
                                 <div>
-                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
-                                        New Password
-                                    </label>
-                                    <div class="relative">
-                                        <i class="bi bi-key absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                                        <input type="password" name="password" required
-                                               class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition @error('password') border-red-400 @enderror"
-                                               placeholder="Min. 8 characters">
-                                    </div>
-                                    @error('password') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">New Password</label>
+                                    <input type="password" name="password" required placeholder="Min. 8 characters"
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all @error('password') border-red-400 @enderror">
+                                    @error('password') <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p> @enderror
                                 </div>
 
                                 <div>
-                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">
-                                        Confirm Password
-                                    </label>
-                                    <div class="relative">
-                                        <i class="bi bi-key-fill absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                                        <input type="password" name="password_confirmation" required
-                                               class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-                                               placeholder="Repeat password">
-                                    </div>
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Confirm Password</label>
+                                    <input type="password" name="password_confirmation" required placeholder="Repeat password"
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all">
                                 </div>
                             </div>
 
-                            <div class="pt-1 flex justify-end">
+                            <div class="flex justify-end pt-1">
                                 <button type="submit"
-                                        class="inline-flex items-center gap-2 px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-xl shadow-sm hover:shadow-md transition-all duration-200">
-                                    <i class="bi bi-shield-check"></i> Update Password
+                                        class="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold rounded-xl shadow-sm shadow-blue-500/20 hover:shadow-md transition-all duration-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+                                    Update Password
                                 </button>
                             </div>
                         </form>
@@ -200,29 +191,30 @@
 
                 <!-- ── DANGER ZONE ── -->
                 <section id="danger">
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl border border-red-200 dark:border-red-900/60 shadow-sm overflow-hidden">
-                        <div class="flex items-center gap-2 px-5 py-3.5 border-b border-red-100 dark:border-red-900/50 bg-red-50 dark:bg-red-900/10">
-                            <div class="w-7 h-7 rounded-lg bg-red-100 dark:bg-red-900/40 flex items-center justify-center">
-                                <i class="bi bi-exclamation-triangle text-red-600 text-sm"></i>
+                    <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-red-200 dark:border-red-900/40 shadow-sm overflow-hidden">
+                        <div class="flex items-center gap-3 px-5 py-4 border-b border-red-100 dark:border-red-900/30 bg-red-50 dark:bg-red-500/5">
+                            <div class="w-8 h-8 rounded-lg bg-red-100 dark:bg-red-500/10 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-red-700 dark:text-red-400">Danger Zone</h3>
-                                <p class="text-xs text-red-400/80 dark:text-red-400/60">Irreversible and destructive actions</p>
+                                <p class="text-xs text-red-500/70 dark:text-red-400/60">Irreversible and destructive actions</p>
                             </div>
                         </div>
 
                         <div class="p-5">
-                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800/50 rounded-xl p-4">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 bg-red-50 dark:bg-red-500/5 border border-red-100 dark:border-red-900/30 rounded-xl p-4">
                                 <div>
-                                    <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Delete Account</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                                        Once deleted, your account and all data — chats, messages, settings — will be permanently removed. This cannot be undone.
+                                    <p class="text-sm font-semibold text-gray-900 dark:text-gray-100">Delete Account</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 max-w-sm">
+                                        Once deleted, your account and all data — chats, messages, settings — will be permanently removed.
                                     </p>
                                 </div>
                                 <button type="button"
                                         onclick="document.getElementById('deleteAccountModal').classList.remove('hidden')"
-                                        class="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-red-600 border border-red-300 dark:border-red-700 hover:bg-red-600 hover:text-white rounded-xl transition-all duration-200">
-                                    <i class="bi bi-trash3"></i> Delete Account
+                                        class="flex-shrink-0 inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800/60 hover:bg-red-600 hover:border-red-600 hover:text-white dark:hover:bg-red-600 dark:hover:border-red-600 dark:hover:text-white rounded-xl transition-all duration-200">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                    Delete Account
                                 </button>
                             </div>
                         </div>
@@ -236,12 +228,11 @@
 
 <!-- ── DELETE ACCOUNT MODAL ── -->
 <div id="deleteAccountModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-700 overflow-hidden"
-         onclick.stop="">
+    <div class="bg-white dark:bg-[#1a1d24] rounded-2xl shadow-2xl w-full max-w-md border border-gray-200 dark:border-gray-800/60 overflow-hidden">
         <!-- Modal Header -->
-        <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-700 bg-red-50 dark:bg-red-900/20">
-            <div class="w-9 h-9 rounded-full bg-red-100 dark:bg-red-900/40 flex items-center justify-center flex-shrink-0">
-                <i class="bi bi-exclamation-triangle-fill text-red-600 text-base"></i>
+        <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60 bg-red-50 dark:bg-red-500/5">
+            <div class="w-9 h-9 rounded-full bg-red-100 dark:bg-red-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
             </div>
             <div>
                 <h4 class="text-sm font-bold text-gray-900 dark:text-white">Delete your account?</h4>
@@ -253,34 +244,29 @@
         <form action="{{ route('settings.destroy-account') }}" method="POST" class="p-5 space-y-4">
             @csrf @method('DELETE')
 
-            <div class="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700/50 rounded-xl px-4 py-3">
-                <p class="text-xs text-amber-700 dark:text-amber-400 flex items-start gap-2">
-                    <i class="bi bi-info-circle-fill flex-shrink-0 mt-0.5"></i>
+            <div class="bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-xl px-4 py-3">
+                <p class="text-xs text-amber-700 dark:text-amber-300 flex items-start gap-2">
+                    <svg class="w-4 h-4 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     All your chats, messages, profile data, and settings will be permanently deleted.
                 </p>
             </div>
 
             <div>
-                <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-1.5">
-                    Confirm with your password
-                </label>
-                <div class="relative">
-                    <i class="bi bi-lock absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
-                    <input type="password" name="password" placeholder="Enter your password" required
-                           class="w-full pl-9 pr-3 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 transition @error('password') border-red-400 @enderror">
-                </div>
-                @error('password') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                <label class="block text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wide mb-1.5">Confirm with your password</label>
+                <input type="password" name="password" placeholder="Enter your password" required
+                       class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all @error('password') border-red-400 @enderror">
+                @error('password') <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p> @enderror
             </div>
 
             <div class="flex gap-3 pt-1">
                 <button type="button"
                         onclick="document.getElementById('deleteAccountModal').classList.add('hidden')"
-                        class="flex-1 py-2.5 text-sm font-medium border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-300 transition">
+                        class="flex-1 py-2.5 text-sm font-medium border border-gray-200 dark:border-gray-700/60 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-600 dark:text-gray-300 transition-colors">
                     Cancel
                 </button>
                 <button type="submit"
-                        class="flex-1 py-2.5 text-sm font-semibold bg-red-600 hover:bg-red-700 text-white rounded-xl shadow-sm transition-all duration-200">
-                    <i class="bi bi-trash3 mr-1.5"></i>Yes, Delete
+                        class="flex-1 py-2.5 text-sm font-semibold bg-red-600 hover:bg-red-500 text-white rounded-xl shadow-sm shadow-red-500/20 transition-all duration-200">
+                    Yes, Delete
                 </button>
             </div>
         </form>
@@ -288,7 +274,39 @@
 </div>
 
 <script>
-    // Close modal on backdrop click
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // ── Dark Mode Toggle (instant apply + AJAX auto-save) ──
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('change', function () {
+            const isDark = this.checked;
+
+            // Immediately update Alpine.js darkMode state
+            const htmlEl = document.documentElement;
+            if (typeof Alpine !== 'undefined') {
+                try { Alpine.$data(htmlEl).darkMode = isDark; } catch(e) {
+                    isDark ? htmlEl.classList.add('dark') : htmlEl.classList.remove('dark');
+                }
+            } else {
+                isDark ? htmlEl.classList.add('dark') : htmlEl.classList.remove('dark');
+            }
+
+            // Auto-save to server via AJAX (no page reload required)
+            const form = this.closest('form');
+            const formData = new FormData(form);
+            formData.set('_method', 'PUT');
+
+            fetch(form.action, {
+                method: 'POST',
+                headers: { 'X-CSRF-TOKEN': csrfToken, 'Accept': 'application/json' },
+                body: formData,
+            }).catch(() => {});
+        });
+    }
+
+    // Close delete modal on backdrop click
     document.getElementById('deleteAccountModal').addEventListener('click', function (e) {
         if (e.target === this) this.classList.add('hidden');
     });
@@ -305,11 +323,12 @@
                 if (scrollArea.scrollTop + 80 >= s.offsetTop) current = s.id;
             });
             navLinks.forEach(l => {
-                l.classList.toggle('bg-violet-50', l.getAttribute('href') === '#' + current);
-                l.classList.toggle('dark:bg-violet-900/20', l.getAttribute('href') === '#' + current);
-                l.classList.toggle('text-violet-700', l.getAttribute('href') === '#' + current);
-                l.classList.toggle('dark:text-violet-300', l.getAttribute('href') === '#' + current);
-                l.classList.toggle('font-semibold', l.getAttribute('href') === '#' + current);
+                const isActive = l.getAttribute('href') === '#' + current;
+                l.classList.toggle('bg-violet-50', isActive);
+                l.classList.toggle('dark:bg-violet-500/10', isActive);
+                l.classList.toggle('text-violet-700', isActive);
+                l.classList.toggle('dark:text-violet-300', isActive);
+                l.classList.toggle('font-semibold', isActive);
             });
         });
     }

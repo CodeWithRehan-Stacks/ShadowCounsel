@@ -13,27 +13,12 @@
             @if(!isset($messages) || $messages->isEmpty())
                 <!-- Welcome / Empty State -->
                 <div class="flex flex-col items-center justify-center min-h-[60vh] text-center" id="welcomeScreen">
-                    <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-violet-600 to-purple-700 flex items-center justify-center mb-5 shadow-lg shadow-violet-500/30">
-                        <i class="bi bi-stars text-white text-3xl"></i>
-                    </div>
+                  
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">How can I help you today?</h2>
                     <p class="text-sm text-gray-500 dark:text-gray-400 max-w-sm mb-8">
-                        Powered by OpenRouter. Ask anything, debug code, draft emails, or explore ideas.
+                        Powered by OpenRouter. Ask anything, draft emails, or explore ideas.
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full max-w-lg text-left">
-                        @foreach([
-                            ['icon' => 'bi-code-slash', 'text' => 'Write a Python web scraper'],
-                            ['icon' => 'bi-lightbulb', 'text' => 'Explain quantum computing simply'],
-                            ['icon' => 'bi-pencil-square', 'text' => 'Draft a professional email'],
-                            ['icon' => 'bi-bar-chart-line', 'text' => 'Tips to improve my productivity'],
-                        ] as $s)
-                            <button onclick="fillInput('{{ $s['text'] }}')"
-                                    class="group flex items-start gap-3 px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-violet-400 dark:hover:border-violet-600 hover:shadow-sm hover:shadow-violet-100 dark:hover:shadow-none transition-all duration-200 text-left">
-                                <i class="bi {{ $s['icon'] }} text-violet-500 text-lg mt-0.5 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700 dark:text-gray-300 group-hover:text-violet-700 dark:group-hover:text-violet-300 font-medium transition-colors">{{ $s['text'] }}</span>
-                            </button>
-                        @endforeach
-                    </div>
+                    
                 </div>
             @else
                 @foreach($messages as $message)
@@ -46,27 +31,31 @@
                                 </div>
                                 <p class="text-xs text-gray-400 text-right mt-1 mr-1">{{ $message->created_at->format('g:i A') }}</p>
                             </div>
-                            <div class="w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold shadow">
-                                {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
-                            </div>
+                            @if(auth()->user()->profile_photo_path)
+                                <img src="{{ Storage::url(auth()->user()->profile_photo_path) }}" alt="User" class="w-9 h-9 flex-shrink-0 rounded-full object-cover shadow-sm ring-1 ring-black/5 dark:ring-white/10">
+                            @else
+                                <div class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold shadow-sm ring-1 ring-black/5 dark:ring-white/10">
+                                    {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                                </div>
+                            @endif
                         </div>
                     @else
                         <!-- AI Message -->
                         <div class="flex justify-start gap-3 items-end">
-                            <div class="w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 dark:from-gray-600 dark:to-gray-800 flex items-center justify-center shadow">
-                                <i class="bi bi-stars text-violet-400 text-sm"></i>
+                            <div class="w-9 h-9 flex-shrink-0 rounded-full bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-sm">
+                                <svg class="w-5 h-5 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"></path></svg>
                             </div>
-                            <div class="max-w-xl flex-1">
-                                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+                            <div class="max-w-3xl flex-1 w-full">
+                                <div class="bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-800/60 text-gray-800 dark:text-gray-200 rounded-2xl rounded-bl-sm px-5 py-4 shadow-sm w-full">
                                     <div class="chat-bubble prose prose-sm dark:prose-invert max-w-none text-inherit leading-relaxed">
                                         {!! \Illuminate\Support\Str::markdown($message->message) !!}
                                     </div>
                                 </div>
-                                <div class="flex items-center gap-3 mt-1 ml-1">
+                                <div class="flex items-center gap-3 mt-1.5 ml-1">
                                     <span class="text-xs text-gray-400">{{ $message->created_at->format('g:i A') }}</span>
                                     <button onclick="copyToClipboard(this)" data-content="{{ e($message->message) }}"
                                             class="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 flex items-center gap-1 transition-colors">
-                                        <i class="bi bi-copy"></i> Copy
+                                        <i class="bi bi-copy"></i> Copy Response
                                     </button>
                                 </div>
                             </div>
@@ -77,8 +66,8 @@
 
             <!-- Typing Indicator (hidden by default) -->
             <div class="flex justify-start gap-3 items-end hidden" id="typingIndicator">
-                <div class="w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center shadow">
-                    <i class="bi bi-stars text-violet-400 text-sm"></i>
+                <div class="w-9 h-9 flex-shrink-0 rounded-full bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-sm">
+                    <svg class="w-5 h-5 text-violet-600 dark:text-violet-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"></path></svg>
                 </div>
                 <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
                     <div class="flex items-center gap-1.5">
@@ -107,31 +96,34 @@
                 </div>
 
                 <!-- Bottom Toolbar -->
-                <div class="flex items-center justify-between px-3 py-2 border-t border-gray-200 dark:border-gray-700">
+                <div class="flex items-center justify-between px-3 py-2 border-t border-gray-100 dark:border-gray-800">
 
                     <!-- Left: Model selector -->
-                    <div class="flex items-center gap-2">
-                        <i class="bi bi-cpu text-violet-500 text-sm flex-shrink-0"></i>
+                    <div class="relative flex items-center group">
+                        <div class="absolute left-2.5 flex items-center pointer-events-none">
+                            <svg class="w-3.5 h-3.5 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
                         <select id="modelSelector"
-                                class="text-xs bg-transparent text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-0 border-none pr-6 appearance-none cursor-pointer hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+                                class="pl-8 pr-7 py-1.5 text-xs font-medium bg-gray-100 dark:bg-[#1a1d24] border border-transparent hover:border-gray-200 dark:hover:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500/30 appearance-none cursor-pointer transition-all shadow-sm">
                             <option value="poolside/laguna-xs-2.1:free">Laguna XS 2.1</option>
                             <option value="cohere/north-mini-code:free">Cohere North Mini</option>
                             <option value="nvidia/llama-nemotron-rerank-vl-1b-v2:free">Nemotron Rerank VL</option>
                             <option value="nvidia/nemotron-3.5-content-safety:free">Nemotron Safety</option>
                             <option value="nvidia/nemotron-3-ultra-550b-a55b:free">Nemotron Ultra 550B</option>
                         </select>
+                        <div class="absolute right-2 flex items-center pointer-events-none text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </div>
                     </div>
 
                     <!-- Right: Send + hint -->
                     <div class="flex items-center gap-3">
-                        <span class="text-xs text-gray-400 hidden sm:inline">
-                            <kbd class="px-1 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Enter</kbd> to send
-                            &nbsp;·&nbsp;
-                            <kbd class="px-1 py-0.5 bg-gray-200 dark:bg-gray-700 rounded text-xs">Shift+Enter</kbd> for new line
+                        <span class="text-[10px] text-gray-400 hidden sm:inline-flex items-center gap-1">
+                            <kbd class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded font-sans">Enter</kbd> to send
                         </span>
                         <button id="sendBtn" type="button"
-                                class="w-8 h-8 flex items-center justify-center rounded-xl bg-violet-600 hover:bg-violet-700 text-white transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm hover:shadow-md">
-                            <i class="bi bi-arrow-up-short text-lg leading-none"></i>
+                                class="w-8 h-8 flex items-center justify-center rounded-full bg-violet-600 hover:bg-violet-500 active:bg-violet-700 text-white transition-all duration-200 disabled:opacity-100 disabled:bg-gray-100 dark:disabled:bg-[#1a1d24] disabled:text-gray-400 dark:disabled:text-gray-600 disabled:cursor-not-allowed shadow-sm hover:shadow-md disabled:shadow-none">
+                            <svg class="w-4 h-4 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18"></path></svg>
                         </button>
                     </div>
                 </div>
@@ -153,6 +145,28 @@
     const typingIndicator = document.getElementById('typingIndicator');
     const welcomeScreen   = document.getElementById('welcomeScreen');
     const userInitial     = "{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}";
+    const userProfileUrl  = "{{ auth()->user()->profile_photo_path ? Storage::url(auth()->user()->profile_photo_path) : '' }}";
+
+    /* ── Configure Markdown & Highlighting ── */
+    if (typeof marked !== 'undefined' && typeof hljs !== 'undefined') {
+        marked.setOptions({
+            highlight: function(code, lang) {
+                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                return hljs.highlight(code, { language }).value;
+            },
+            langPrefix: 'hljs language-',
+            breaks: true,
+            gfm: true
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        if (typeof hljs !== 'undefined') {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightElement(el);
+            });
+        }
+    });
 
     /* ── Auto-resize textarea ── */
     messageInput.addEventListener('input', function () {
@@ -192,6 +206,14 @@
         const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const div = document.createElement('div');
         div.className = 'flex justify-end gap-3 items-end message-item';
+        
+        let avatarHtml = '';
+        if (userProfileUrl) {
+            avatarHtml = `<img src="${userProfileUrl}" alt="User" class="w-9 h-9 flex-shrink-0 rounded-full object-cover shadow-sm ring-1 ring-black/5 dark:ring-white/10">`;
+        } else {
+            avatarHtml = `<div class="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold shadow-sm ring-1 ring-black/5 dark:ring-white/10">${userInitial}</div>`;
+        }
+
         div.innerHTML = `
             <div class="max-w-xl">
                 <div class="bg-violet-600 text-white rounded-2xl rounded-br-sm px-4 py-3 shadow-sm">
@@ -199,9 +221,7 @@
                 </div>
                 <p class="text-xs text-gray-400 text-right mt-1 mr-1">${time}</p>
             </div>
-            <div class="w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold shadow">
-                ${userInitial}
-            </div>`;
+            ${avatarHtml}`;
         return div;
     }
 
@@ -210,18 +230,18 @@
         const div = document.createElement('div');
         div.className = 'flex justify-start gap-3 items-end message-item';
         div.innerHTML = `
-            <div class="w-8 h-8 flex-shrink-0 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center shadow">
-                <i class="bi bi-stars text-violet-400 text-sm"></i>
+            <div class="w-9 h-9 flex-shrink-0 rounded-full bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-700 flex items-center justify-center shadow-sm">
+                <svg class="w-5 h-5 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"></path></svg>
             </div>
-            <div class="max-w-xl flex-1">
-                <div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+            <div class="max-w-3xl flex-1 w-full">
+                <div class="bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-800/60 text-gray-800 dark:text-gray-200 rounded-2xl rounded-bl-sm px-5 py-4 shadow-sm w-full">
                     <div class="chat-bubble prose prose-sm dark:prose-invert max-w-none leading-relaxed">${marked.parse(content)}</div>
                 </div>
-                <div class="flex items-center gap-3 mt-1 ml-1">
+                <div class="flex items-center gap-3 mt-1.5 ml-1">
                     <span class="text-xs text-gray-400">${time}</span>
                     <button onclick="copyToClipboard(this)" data-content="${escapeHtml(content)}"
                             class="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 flex items-center gap-1 transition-colors">
-                        <i class="bi bi-copy"></i> Copy
+                        <i class="bi bi-copy"></i> Copy Response
                     </button>
                 </div>
             </div>`;

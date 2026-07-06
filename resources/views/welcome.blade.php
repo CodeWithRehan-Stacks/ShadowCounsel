@@ -17,17 +17,7 @@
 
         .glow-text {
             text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-
             font-family: "Elms Sans", sans-serif;
-                
-               
-        }
-
-        @font-face {
-            font-family: "Elms Sans", sans-serif;
-            font-optical-sizing: auto;
-            font-weight: <weight>;
-            font-style: normal;
         }
     </style>
 </head>
@@ -40,8 +30,9 @@
     <!-- Top Navigation / Logo -->
     <div class="w-full max-w-6xl flex justify-between items-center py-4">
         <img src="{{ asset('svg/Logo.svg') }}" alt="ShadowCounsel" class="h-10 w-auto">
-        <div class="text-xs tracking-widest text-gray-500 uppercase hidden sm:block">
-            AI Finance & Legal Orchestrator
+        <div class="text-xs tracking-widest text-gray-500 uppercase hidden sm:flex items-center gap-2">
+            <a href="{{ route('login') }}" class="px-3 py-2 hover:text-gray-300 transition-colors rounded-lg">Log in</a>
+            <a href="{{ route('register') }}" class="px-3 py-2 hover:text-gray-300 transition-colors rounded-lg">Register</a>
         </div>
     </div>
 
@@ -71,7 +62,7 @@
                 type="email"
                 name="email"
                 placeholder="Enter your email to get notified"
-                class="w-full bg-transparent px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none"
+                class="w-full bg-transparent px-4 py-2 text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-0"
                 required>
             <button
                 type="submit"
@@ -99,7 +90,7 @@
                 <h3 class="text-sm font-semibold text-white">Successfully Subscribed!</h3>
                 <p class="text-xs text-gray-400 mt-0.5">{{ session('success') }}</p>
             </div>
-            <button onclick="closeModal()" class="text-gray-500 hover:text-gray-300 transition-colors">
+            <button type="button" onclick="closeModal()" class="text-gray-500 hover:text-gray-300 transition-colors">
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>

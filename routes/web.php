@@ -76,7 +76,7 @@ Route::middleware('auth')->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::get('/', function () {
-    return redirect()->route('login');
+    return view('welcome');
 });
 
 Route::post('/subscribe', [SubscriptionController::class, 'store'])->name('subscribe.store');

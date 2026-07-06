@@ -61,6 +61,9 @@ class AiService
             if ($status === 401 || $status === 403) {
                 throw new Exception('Invalid or expired OpenRouter API key. Please update your OPENROUTER_API_KEY.');
             }
+            if ($status === 404) {
+                throw new Exception("The selected model \"{$model}\" is not available for chat. Please choose a different model from the selector.");
+            }
             if ($status === 503) {
                 throw new Exception('The AI model is currently unavailable. Please select a different model and try again.');
             }
