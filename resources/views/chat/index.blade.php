@@ -107,8 +107,6 @@
                                 class="pl-8 pr-7 py-1.5 text-xs font-medium bg-gray-100 dark:bg-[#1a1d24] border border-transparent hover:border-gray-200 dark:hover:border-gray-700 text-gray-700 dark:text-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500/30 appearance-none cursor-pointer transition-all shadow-sm">
                             <option value="poolside/laguna-xs-2.1:free">Laguna XS 2.1</option>
                             <option value="cohere/north-mini-code:free">Cohere North Mini</option>
-                            <option value="nvidia/llama-nemotron-rerank-vl-1b-v2:free">Nemotron Rerank VL</option>
-                            <option value="nvidia/nemotron-3.5-content-safety:free">Nemotron Safety</option>
                             <option value="nvidia/nemotron-3-ultra-550b-a55b:free">Nemotron Ultra 550B</option>
                         </select>
                         <div class="absolute right-2 flex items-center pointer-events-none text-gray-400 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
