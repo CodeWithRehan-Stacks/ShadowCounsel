@@ -6,93 +6,95 @@
 @section('content')
 <div class="overflow-y-auto h-full bg-gray-50 dark:bg-gray-950">
 
-    <!-- Hero Banner -->
-    <div class="relative h-32 overflow-hidden bg-[#0f1117]">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-slate-700/50 via-[#0f1117] to-[#0f1117]"></div>
-        <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl"></div>
-        <div class="relative h-full flex flex-col justify-end px-6 pb-5 max-w-5xl mx-auto">
-            <h1 class="text-xl font-bold text-white flex items-center gap-2.5">
-                <svg class="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                Settings
-            </h1>
-            <p class="text-xs text-gray-400 mt-1">Manage your account preferences and security</p>
-        </div>
-    </div>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-5">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+        <div class="space-y-6">
 
-            <!-- LEFT: Settings Navigation -->
-            <nav class="lg:col-span-1">
-                <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-gray-200 dark:border-gray-800/60 shadow-sm overflow-hidden sticky top-4">
-                    <div class="px-4 py-3 border-b border-gray-100 dark:border-gray-800/60">
-                        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider">Navigation</p>
-                    </div>
-                    <div class="p-2 space-y-0.5">
-                        <a href="#appearance" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
-                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
-                            Appearance
-                        </a>
-                        <a href="#security" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
-                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                            Security
-                        </a>
-                        <a href="#notifications" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-gray-600 dark:text-gray-400 hover:bg-violet-50 dark:hover:bg-violet-500/10 hover:text-violet-700 dark:hover:text-violet-300 transition-colors group">
-                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                            Notifications
-                        </a>
-                        <a href="#danger" class="settings-nav-link flex items-center gap-2.5 px-3 py-2.5 text-sm font-medium rounded-xl text-red-500/80 dark:text-red-400/70 hover:bg-red-50 dark:hover:bg-red-500/10 hover:text-red-600 dark:hover:text-red-400 transition-colors group">
-                            <svg class="w-4 h-4 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-                            Danger Zone
-                        </a>
-                    </div>
-                    <div class="p-3 border-t border-gray-100 dark:border-gray-800/60">
-                        <a href="{{ route('profile.index') }}" class="flex items-center gap-2 text-xs text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 font-medium transition-colors">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                            Edit Profile
-                        </a>
-                    </div>
-                </div>
-            </nav>
+                <!-- ── PROFILE ── -->
+                <section id="profile">
+                    <form action="{{ route('profile.update') }}" method="POST" enctype="multipart/form-data">
+                        @csrf @method('PUT')
+                        <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-gray-200 dark:border-gray-800/60 shadow-sm overflow-hidden mb-5">
+                            <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60">
+                                <div class="w-8 h-8 rounded-lg bg-violet-100 dark:bg-violet-500/10 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Profile Information</h3>
+                                    <p class="text-xs text-gray-400">Update your account's profile information and email address</p>
+                                </div>
+                            </div>
+                            <div class="p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="sm:col-span-2 flex flex-col items-start gap-4 mb-2">
+                                    <img id="avatarPreviewSettings"
+                                         src="{{ auth()->user()->profile_photo_path ? Storage::url(auth()->user()->profile_photo_path) : 'https://ui-avatars.com/api/?name='.urlencode(auth()->user()->name).'&background=7c3aed&color=fff&size=128' }}"
+                                         class="w-20 h-20 rounded-2xl object-cover shadow ring-2 ring-violet-500/30">
+                                    <input type="file" name="profile_photo" id="profile_photo_settings" accept="image/*" class="hidden" onchange="previewSettingsAvatar(this)">
+                                    <label for="profile_photo_settings"
+                                           class="cursor-pointer inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700/60 hover:border-violet-400 dark:hover:border-violet-500/50 hover:bg-violet-50 dark:hover:bg-violet-500/10 rounded-xl transition-all">
+                                        <svg class="w-4 h-4 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                        Change Photo
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Full Name</label>
+                                    <input type="text" name="name" value="{{ old('name', auth()->user()->name) }}" required
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 @error('name') border-red-400 @enderror">
+                                    @error('name') <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p> @enderror
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Email Address</label>
+                                    <input type="email" name="email" value="{{ old('email', auth()->user()->email) }}" required
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 @error('email') border-red-400 @enderror">
+                                    @error('email') <p class="text-red-500 text-xs mt-1.5">{{ $message }}</p> @enderror
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Phone Number</label>
+                                    <input type="text" name="phone_number" value="{{ old('phone_number', auth()->user()->phone_number) }}"
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Country</label>
+                                    <input type="text" name="country" value="{{ old('country', auth()->user()->country) }}"
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Bio</label>
+                                    <textarea name="bio" rows="2" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500">{{ old('bio', auth()->user()->bio) }}</textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1.5">Timezone</label>
+                                    <input type="text" name="timezone" value="{{ old('timezone', auth()->user()->timezone) }}"
+                                           class="w-full px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-sm text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500">
+                                </div>
+                            </div>
+                            <div class="px-5 py-4 border-t border-gray-100 dark:border-gray-800/60 flex justify-end">
+                                <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold rounded-xl shadow-sm transition-all">
+                                    Save Profile
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
 
-            <!-- RIGHT: Settings Panels -->
-            <div class="lg:col-span-3 space-y-5">
-
-                <!-- ── APPEARANCE ── -->
-                <section id="appearance">
+                <!-- ── NOTIFICATIONS ── -->
+                <section id="notifications">
                     <div class="bg-white dark:bg-[#1a1d24] rounded-2xl border border-gray-200 dark:border-gray-800/60 shadow-sm overflow-hidden">
                         <div class="flex items-center gap-3 px-5 py-4 border-b border-gray-100 dark:border-gray-800/60">
                             <div class="w-8 h-8 rounded-lg bg-violet-100 dark:bg-violet-500/10 flex items-center justify-center">
-                                <svg class="w-4 h-4 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                                <svg class="w-4 h-4 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Appearance & Language</h3>
-                                <p class="text-xs text-gray-400">Customize how the app looks and feels</p>
+                                <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200">Notifications</h3>
+                                <p class="text-xs text-gray-400">Manage your alerts and in-app notifications</p>
                             </div>
                         </div>
 
                         <form action="{{ route('settings.update') }}" method="POST" class="divide-y divide-gray-100 dark:divide-gray-800/60">
                             @csrf @method('PUT')
 
-                            <!-- Dark Mode -->
-                            <div class="flex items-center justify-between px-5 py-4">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mt-0.5 flex-shrink-0">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Dark Mode</p>
-                                        <p class="text-xs text-gray-400 mt-0.5">Reduce eye strain with a darker interface</p>
-                                    </div>
-                                </div>
-                                <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
-                                    <input type="checkbox" name="dark_mode" id="darkModeToggle" value="1" {{ $setting->dark_mode ? 'checked' : '' }} class="sr-only peer">
-                                    <div class="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600"></div>
-                                </label>
-                            </div>
-
                             <!-- Notifications -->
-                            <div class="flex items-center justify-between px-5 py-4" id="notifications">
+                            <div class="flex items-center justify-between px-5 py-4">
                                 <div class="flex items-start gap-3">
                                     <div class="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mt-0.5 flex-shrink-0">
                                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
@@ -106,27 +108,6 @@
                                     <input type="checkbox" name="notifications" value="1" {{ $setting->notifications ? 'checked' : '' }} class="sr-only peer">
                                     <div class="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-violet-600"></div>
                                 </label>
-                            </div>
-
-                            <!-- Language -->
-                            <div class="flex items-center justify-between px-5 py-4">
-                                <div class="flex items-start gap-3">
-                                    <div class="w-9 h-9 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center mt-0.5 flex-shrink-0">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-semibold text-gray-800 dark:text-gray-200">Language</p>
-                                        <p class="text-xs text-gray-400 mt-0.5">Choose your preferred interface language</p>
-                                    </div>
-                                </div>
-                                <select name="language" class="text-sm px-3 py-2 rounded-xl border border-gray-200 dark:border-gray-700/60 bg-gray-50 dark:bg-gray-900/50 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 transition-all">
-                                    <option value="en" {{ $setting->language === 'en' ? 'selected' : '' }}>🇺🇸 English</option>
-                                    <option value="ar" {{ $setting->language === 'ar' ? 'selected' : '' }}>🇸🇦 Arabic</option>
-                                    <option value="fr" {{ $setting->language === 'fr' ? 'selected' : '' }}>🇫🇷 French</option>
-                                    <option value="es" {{ $setting->language === 'es' ? 'selected' : '' }}>🇪🇸 Spanish</option>
-                                    <option value="de" {{ $setting->language === 'de' ? 'selected' : '' }}>🇩🇪 German</option>
-                                    <option value="ur" {{ $setting->language === 'ur' ? 'selected' : '' }}>🇵🇰 Urdu</option>
-                                </select>
                             </div>
 
                             <div class="px-5 py-4 flex justify-end">
@@ -220,10 +201,8 @@
                         </div>
                     </div>
                 </section>
-
-            </div><!-- end right col -->
-        </div><!-- end grid -->
-    </div><!-- end container -->
+        </div><!-- end space-y-6 -->
+    </div><!-- end max-w-3xl -->
 </div><!-- end scroll wrapper -->
 
 <!-- ── DELETE ACCOUNT MODAL ── -->
@@ -276,36 +255,6 @@
 <script>
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    // ── Dark Mode Toggle (instant apply + AJAX auto-save) ──
-    const darkModeToggle = document.getElementById('darkModeToggle');
-
-    if (darkModeToggle) {
-        darkModeToggle.addEventListener('change', function () {
-            const isDark = this.checked;
-
-            // Immediately update Alpine.js darkMode state
-            const htmlEl = document.documentElement;
-            if (typeof Alpine !== 'undefined') {
-                try { Alpine.$data(htmlEl).darkMode = isDark; } catch(e) {
-                    isDark ? htmlEl.classList.add('dark') : htmlEl.classList.remove('dark');
-                }
-            } else {
-                isDark ? htmlEl.classList.add('dark') : htmlEl.classList.remove('dark');
-            }
-
-            // Auto-save to server via AJAX (no page reload required)
-            const form = this.closest('form');
-            const formData = new FormData(form);
-            formData.set('_method', 'PUT');
-
-            fetch(form.action, {
-                method: 'POST',
-                headers: { 'X-CSRF-TOKEN': csrfToken, 'Accept': 'application/json' },
-                body: formData,
-            }).catch(() => {});
-        });
-    }
-
     // Close delete modal on backdrop click
     document.getElementById('deleteAccountModal').addEventListener('click', function (e) {
         if (e.target === this) this.classList.add('hidden');
@@ -331,6 +280,16 @@
                 l.classList.toggle('font-semibold', isActive);
             });
         });
+    }
+
+    function previewSettingsAvatar(input) {
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('avatarPreviewSettings').src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
     }
 </script>
 @endsection

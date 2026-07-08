@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: {{ auth()->user()->setting?->dark_mode ? 'true' : 'false' }}, sidebarOpen: true, mobileSidebarOpen: false }" :class="{ 'dark': darkMode }">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: {{ auth()->user()->setting?->dark_mode ? 'true' : 'false' }}, sidebarOpen: true, mobileSidebarOpen: false, profileOpen: false }" :class="{ 'dark': darkMode }">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,6 +22,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
+        [x-cloak] { display: none !important; }
         body { font-family: 'Inter', sans-serif; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -129,21 +130,6 @@
                 <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 Finance AI
             </a>
-            <a href="{{ route('profile.index') }}" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-colors {{ request()->routeIs('profile.*') ? 'bg-gray-200/60 dark:bg-[#1a1d24] text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200/40 dark:hover:bg-[#1a1d24] hover:text-gray-900 dark:hover:text-gray-200' }}">
-                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                Profile
-            </a>
-            <a href="{{ route('settings.index') }}" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-colors {{ request()->routeIs('settings.*') ? 'bg-gray-200/60 dark:bg-[#1a1d24] text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200/40 dark:hover:bg-[#1a1d24] hover:text-gray-900 dark:hover:text-gray-200' }}">
-                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                Settings
-            </a>
-            <form action="{{ route('logout') }}" method="POST" class="pt-1">
-                @csrf
-                <button type="submit" class="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-red-500/90 dark:text-red-400/80 hover:text-red-600 dark:hover:text-red-300 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl transition-colors text-left">
-                    <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                    Logout
-                </button>
-            </form>
         </div>
     </aside>
 
@@ -183,25 +169,10 @@
             @endforelse
         </div>
         <div class="p-3 border-t border-gray-200 dark:border-gray-800/60 space-y-0.5 shrink-0">
-            <a href="{{ route('profile.index') }}" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#1a1d24] rounded-xl transition-colors">
-                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                Profile
-            </a>
             <a href="{{ route('finance.index') }}" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-xl transition-colors {{ request()->routeIs('finance.*') ? 'bg-gray-200/60 dark:bg-[#1a1d24] text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#1a1d24]' }}">
                 <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 Finance AI
             </a>
-            <a href="{{ route('settings.index') }}" class="flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-[#1a1d24] rounded-xl transition-colors">
-                <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                Settings
-            </a>
-            <form action="{{ route('logout') }}" method="POST" class="pt-1">
-                @csrf
-                <button type="submit" class="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-red-500/90 dark:text-red-400/80 hover:bg-red-50 dark:hover:bg-red-500/10 rounded-xl transition-colors text-left">
-                    <svg class="w-5 h-5 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
-                    Logout
-                </button>
-            </form>
         </div>
     </div>
 
@@ -241,16 +212,34 @@
                     </template>
                 </button>
 
-                <!-- User Avatar -->
-                <a href="{{ route('profile.index') }}" class="flex items-center gap-2 group pl-2 border-l border-gray-200 dark:border-gray-800">
-                    @if(auth()->user()->profile_photo_path)
-                        <img src="{{ Storage::url(auth()->user()->profile_photo_path) }}" class="w-8 h-8 rounded-full object-cover ring-2 ring-transparent group-hover:ring-violet-500/50 transition-all">
-                    @else
-                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold ring-2 ring-transparent group-hover:ring-violet-500/50 transition-all shadow-sm">
-                            {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
-                        </div>
-                    @endif
-                </a>
+                <!-- User Avatar Dropdown -->
+                <div class="relative" @click.away="profileOpen = false">
+                    <button @click="profileOpen = !profileOpen" class="flex items-center gap-2 group pl-2 border-l border-gray-200 dark:border-gray-800 focus:outline-none">
+                        @if(auth()->user()->profile_photo_path)
+                            <img src="{{ Storage::url(auth()->user()->profile_photo_path) }}" class="w-8 h-8 rounded-full object-cover ring-2 ring-transparent group-hover:ring-violet-500/50 transition-all">
+                        @else
+                            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-sm font-bold ring-2 ring-transparent group-hover:ring-violet-500/50 transition-all shadow-sm">
+                                {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
+                            </div>
+                        @endif
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div x-show="profileOpen" style="display: none;"
+                         x-transition:enter="transition ease-out duration-100"
+                         x-transition:enter-start="transform opacity-0 scale-95"
+                         x-transition:enter-end="transform opacity-100 scale-100"
+                         x-transition:leave="transition ease-in duration-75"
+                         x-transition:leave-start="transform opacity-100 scale-100"
+                         x-transition:leave-end="transform opacity-0 scale-95"
+                         class="absolute right-0 mt-2 w-48 bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg z-50 py-1 overflow-hidden">
+                        <a href="{{ route('settings.index') }}" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">Settings & Profile</a>
+                        <div class="border-t border-gray-200 dark:border-gray-700 my-1"></div>
+                        <form action="{{ route('logout') }}" method="POST" class="w-full m-0">
+                            @csrf
+                            <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">Logout</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </header>
 

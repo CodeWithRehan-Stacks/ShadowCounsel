@@ -11,11 +11,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        $user = Auth::user();
-        $totalChats = $user->chats()->count();
-        $totalMessages = $user->chats()->withCount('messages')->get()->sum('messages_count');
-        
-        return view('profile.index', compact('user', 'totalChats', 'totalMessages'));
+        return redirect()->route('settings.index');
     }
 
     public function update(Request $request)
@@ -57,6 +53,6 @@ class ProfileController extends Controller
 
         $user->save();
 
-        return redirect()->route('profile.index')->with('success', 'Profile updated successfully.');
+        return redirect()->route('settings.index')->with('success', 'Profile updated successfully.');
     }
 }
