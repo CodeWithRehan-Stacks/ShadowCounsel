@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\SubscriptionController;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -67,6 +68,12 @@ Route::middleware('auth')->group(function () {
         Route::put('/', [SettingsController::class, 'update'])->name('update');
         Route::put('/password', [SettingsController::class, 'updatePassword'])->name('password');
         Route::delete('/account', [SettingsController::class, 'destroyAccount'])->name('destroy-account');
+    });
+
+    // Finance Assistant Routes
+    Route::prefix('finance')->name('finance.')->group(function () {
+        Route::get('/', [FinanceController::class, 'index'])->name('index');
+        Route::post('/query', [FinanceController::class, 'query'])->name('query')->middleware('throttle:chat');
     });
 });
 

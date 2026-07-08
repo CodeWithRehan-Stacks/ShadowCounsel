@@ -47,8 +47,8 @@
                             </div>
                             <div class="max-w-3xl flex-1 w-full">
                                 <div class="bg-white dark:bg-[#1a1d24] border border-gray-200 dark:border-gray-800/60 text-gray-800 dark:text-gray-200 rounded-2xl rounded-bl-sm px-5 py-4 shadow-sm w-full">
-                                    <div class="chat-bubble prose prose-sm dark:prose-invert max-w-none text-inherit leading-relaxed">
-                                        {!! \Illuminate\Support\Str::markdown($message->message) !!}
+                                    <div class="chat-bubble prose prose-sm dark:prose-invert max-w-none text-inherit leading-relaxed ai-message-content">
+                                        <div class="raw-markdown" style="display: none;">{{ $message->message }}</div>
                                     </div>
                                 </div>
                                 <div class="flex items-center gap-3 mt-1.5 ml-1">
@@ -156,7 +156,25 @@
             breaks: true,
             gfm: true
         });
+        
+        if (typeof markedKatex !== 'undefined') {
+            marked.use(markedKatex({
+                throwOnError: false,
+                displayMode: true
+            }));
+        }
     }
+
+    // Render existing AI messages on the client side to ensure math is parsed correctly
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.ai-message-content').forEach(container => {
+            const rawDiv = container.querySelector('.raw-markdown');
+            if (rawDiv) {
+                const content = rawDiv.textContent;
+                container.innerHTML = marked.parse(content);
+            }
+        });
+    });
 
     document.addEventListener('DOMContentLoaded', (event) => {
         if (typeof hljs !== 'undefined') {
